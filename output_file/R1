@@ -1,0 +1,135 @@
+Building configuration...
+
+Current configuration : 1645 bytes
+!
+! Last configuration change at 12:38:34 UTC Wed Dec 18 2019 by admin
+upgrade fpd auto
+version 15.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname R1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+no ip icmp rate-limit unreachable
+!
+!
+!
+!
+ip dhcp pool h
+!
+ip dhcp pool ali
+ network 30.30.30.0 255.255.255.0
+ default-router 30.30.30.1 
+!
+ip dhcp pool hejab
+ network 40.40.40.0 255.255.255.0
+ default-router 40.40.40.1 
+!
+!
+!
+no ip domain lookup
+ip domain name hejab.com
+ip cef
+no ipv6 cef
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+username admin privilege 15 password 0 admin
+!
+redundancy
+!
+!
+ip tcp synwait-time 5
+ip ssh version 2
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Loopback1
+ ip address 4.4.4.4 255.255.255.0
+!
+interface FastEthernet0/0
+ ip address 10.1.1.1 255.255.255.0
+ duplex auto
+ speed auto
+!
+interface FastEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+!
+interface FastEthernet0/1.1
+ encapsulation dot1Q 3
+ ip address 30.30.30.1 255.255.255.0
+ ip ospf 1 area 0
+!
+interface FastEthernet0/1.2
+ encapsulation dot1Q 4
+ ip address 40.40.40.1 255.255.255.0
+ ip ospf 1 area 0
+!
+router ospf 1
+!
+ip forward-protocol nd
+no ip http server
+no ip http secure-server
+!
+!
+!
+ip access-list standard hejab
+!
+no cdp log mismatch duplex
+!
+!
+!
+control-plane
+!
+!
+!
+mgcp profile default
+!
+!
+!
+gatekeeper
+ shutdown
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ stopbits 1
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ stopbits 1
+line vty 0 4
+ login local
+ transport input ssh
+ transport output ssh
+!
+!
+end
+

@@ -1,0 +1,924 @@
+INFO:netdev:Host 10.1.1.1: Trying to connect to the device
+INFO:netdev:Host 10.1.1.1: Establishing connection to port 22
+INFO:netdev:Host 10.1.1.1: Connection is established
+INFO:netdev:Host 10.1.1.1: Reading until pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern: \>|\#
+DEBUG:netdev:Host 10.1.1.1: Reading pattern '\>|\#' was found: '\r\nR1#'
+DEBUG:netdev:Host 10.1.1.1: Establish Connection Output: '\r\nR1#'
+INFO:netdev:Host 10.1.1.1: Setting base prompt
+INFO:netdev:Host 10.1.1.1: Finding prompt
+INFO:netdev:Host 10.1.1.1: Reading until pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern: \>|\#
+DEBUG:netdev:Host 10.1.1.1: Reading pattern '\>|\#' was found: '\r\nR1#'
+DEBUG:netdev:Host 10.1.1.1: Found Prompt: 'R1#'
+DEBUG:netdev:Host 10.1.1.1: Base Prompt: R1
+DEBUG:netdev:Host 10.1.1.1: Base Pattern: R1.*?(\(.*?\))?[\>|\#]
+INFO:netdev:Host 10.1.1.1: Entering to privilege exec
+INFO:netdev:Host 10.1.1.1: Checking privilege exec
+INFO:netdev:Host 10.1.1.1: Reading until pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern: R1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' was found: '\r\nR1#'
+INFO:netdev:Host 10.1.1.1: Trying to disable paging
+DEBUG:netdev:Host 10.1.1.1: Disable paging command: 'terminal length 0\n'
+INFO:netdev:Host 10.1.1.1: Reading until pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern: R1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' was found: 'terminal length 0\r\nR1#'
+DEBUG:netdev:Host 10.1.1.1: Disable paging output: 'terminal length 0\r\nR1#'
+INFO:netdev:Host 10.1.1.1: Has connected to the device
+INFO:netdev:Host 10.1.1.1: Sending command
+DEBUG:netdev:Host 10.1.1.1: Send command: 'show ip interface b | section exclude (unassigned|down|IP-Address)\n'
+INFO:netdev:Host 10.1.1.1: Reading until prompt or pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' or 'R1.*?(\(.*?\))?[\>|\#]' was found: 'show ip interface b | section exclude (unassigned|down|IP-Address)\r\nFastEthernet0/0            10.1.1.1        YES NVRAM  up                    up      \r\nFastEthernet0/1.1          30.30.30.1      YES manual up                    up      \r\nFastEthernet0/1.2          40.40.40.1      YES manual up                    up      \r\nLoopback1                  4.4.4.4         YES manual up                    up      \r\n\r\nR1#'
+INFO:netdev:Host 10.1.1.1: Stripping prompt
+INFO:netdev:Stripping command
+DEBUG:netdev:Host 10.1.1.1: Send command output: 'FastEthernet0/0            10.1.1.1        YES NVRAM  up                    up      \nFastEthernet0/1.1          30.30.30.1      YES manual up                    up      \nFastEthernet0/1.2          40.40.40.1      YES manual up                    up      \nLoopback1                  4.4.4.4         YES manual up                    up      \n'
+INFO:netdev:Host 10.1.1.1: Entering to configuration mode
+INFO:netdev:Host 10.1.1.1: Checking configuration mode
+INFO:netdev:Host 10.1.1.1: Reading until pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern: R1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' was found: '\r\nR1#'
+INFO:netdev:Host 10.1.1.1: Reading until pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern: R1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' was found: 'conf t\r\nEnter configuration commands, one per line.  End with CNTL/Z.\r\nR1(config)#'
+INFO:netdev:Host 10.1.1.1: Checking configuration mode
+INFO:netdev:Host 10.1.1.1: Reading until pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern: R1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' was found: '\r\nR1(config)#'
+INFO:netdev:Host 10.1.1.1: Sending configuration settings
+DEBUG:netdev:Host 10.1.1.1: Config commands: ['ip dhcp pool ali', 'network 30.30.30.1 255.255.255.0', 'default-router 30.30.30.1']
+INFO:netdev:Host 10.1.1.1: Reading until pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern: R1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' was found: 'ip dhcp pool ali\r\nR1(dhcp-config)#'
+INFO:netdev:Host 10.1.1.1: Reading until pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern: R1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' was found: 'network 30.30.30.1 255.255.255.0\r\nR1(dhcp-config)#'
+INFO:netdev:Host 10.1.1.1: Reading until pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern: R1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' was found: 'default-router 30.30.30.1\r\nR1(dhcp-config)#'
+DEBUG:netdev:Host 10.1.1.1: Config commands output: 'ip dhcp pool ali\nR1(dhcp-config)#network 30.30.30.1 255.255.255.0\nR1(dhcp-config)#default-router 30.30.30.1\nR1(dhcp-config)#'
+INFO:netdev:Host 10.1.1.1: Exiting from configuration mode
+INFO:netdev:Host 10.1.1.1: Checking configuration mode
+INFO:netdev:Host 10.1.1.1: Reading until pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern: R1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' was found: '\r\nR1(dhcp-config)#'
+INFO:netdev:Host 10.1.1.1: Reading until pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern: R1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' was found: 'end\r\nR1#'
+INFO:netdev:Host 10.1.1.1: Checking configuration mode
+INFO:netdev:Host 10.1.1.1: Reading until pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern: R1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' was found: '\r\nR1#'
+DEBUG:netdev:Host 10.1.1.1: Config commands output: 'conf t\nEnter configuration commands, one per line.  End with CNTL/Z.\nR1(config)#ip dhcp pool ali\nR1(dhcp-config)#network 30.30.30.1 255.255.255.0\nR1(dhcp-config)#default-router 30.30.30.1\nR1(dhcp-config)#end\nR1#'
+INFO:netdev:Host 10.1.1.1: Entering to configuration mode
+INFO:netdev:Host 10.1.1.1: Checking configuration mode
+INFO:netdev:Host 10.1.1.1: Reading until pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern: R1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' was found: '\r\nR1#'
+INFO:netdev:Host 10.1.1.1: Reading until pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern: R1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' was found: 'conf t\r\nEnter configuration commands, one per line.  End with CNTL/Z.\r\nR1(config)#'
+INFO:netdev:Host 10.1.1.1: Checking configuration mode
+INFO:netdev:Host 10.1.1.1: Reading until pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern: R1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' was found: '\r\nR1(config)#'
+INFO:netdev:Host 10.1.1.1: Sending configuration settings
+DEBUG:netdev:Host 10.1.1.1: Config commands: ['ip dhcp pool hejab', 'network 40.40.40.1 255.255.255.0', 'default-router 40.40.40.1']
+INFO:netdev:Host 10.1.1.1: Reading until pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern: R1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' was found: 'ip dhcp pool hejab\r\nR1(dhcp-config)#'
+INFO:netdev:Host 10.1.1.1: Reading until pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern: R1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' was found: 'network 40.40.40.1 255.255.255.0\r\nR1(dhcp-config)#'
+INFO:netdev:Host 10.1.1.1: Reading until pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern: R1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' was found: 'default-router 40.40.40.1\r\nR1(dhcp-config)#'
+DEBUG:netdev:Host 10.1.1.1: Config commands output: 'ip dhcp pool hejab\nR1(dhcp-config)#network 40.40.40.1 255.255.255.0\nR1(dhcp-config)#default-router 40.40.40.1\nR1(dhcp-config)#'
+INFO:netdev:Host 10.1.1.1: Exiting from configuration mode
+INFO:netdev:Host 10.1.1.1: Checking configuration mode
+INFO:netdev:Host 10.1.1.1: Reading until pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern: R1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' was found: '\r\nR1(dhcp-config)#'
+INFO:netdev:Host 10.1.1.1: Reading until pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern: R1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' was found: 'end\r\nR1#'
+INFO:netdev:Host 10.1.1.1: Checking configuration mode
+INFO:netdev:Host 10.1.1.1: Reading until pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern: R1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' was found: '\r\nR1#'
+DEBUG:netdev:Host 10.1.1.1: Config commands output: 'conf t\nEnter configuration commands, one per line.  End with CNTL/Z.\nR1(config)#ip dhcp pool hejab\nR1(dhcp-config)#network 40.40.40.1 255.255.255.0\nR1(dhcp-config)#default-router 40.40.40.1\nR1(dhcp-config)#end\nR1#'
+INFO:netdev:Host 10.1.1.1: Sending command
+DEBUG:netdev:Host 10.1.1.1: Send command: 'show arp | section exclude (Address|-)\n'
+INFO:netdev:Host 10.1.1.1: Reading until prompt or pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' or 'R1.*?(\(.*?\))?[\>|\#]' was found: 'show arp | section exclude (Address|-)\r\nInternet  10.1.1.2              161   8a99.ee04.ae69  ARPA   FastEthernet0/0\r\nInternet  30.30.30.7             88   0050.7966.6808  ARPA   FastEthernet0/1.1\r\nInternet  30.30.30.8             19   0050.7966.6809  ARPA   FastEthernet0/1.1\r\n\r\nR1#'
+INFO:netdev:Host 10.1.1.1: Stripping prompt
+INFO:netdev:Stripping command
+DEBUG:netdev:Host 10.1.1.1: Send command output: 'Internet  10.1.1.2              161   8a99.ee04.ae69  ARPA   FastEthernet0/0\nInternet  30.30.30.7             88   0050.7966.6808  ARPA   FastEthernet0/1.1\nInternet  30.30.30.8             19   0050.7966.6809  ARPA   FastEthernet0/1.1\n'
+INFO:netdev:Host 10.1.1.1: Sending command
+DEBUG:netdev:Host 10.1.1.1: Send command: 'show run | inc hostname\n'
+INFO:netdev:Host 10.1.1.1: Reading until prompt or pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' or 'R1.*?(\(.*?\))?[\>|\#]' was found: 'show run | inc hostname\r\nhostname R1\r\nR1#'
+INFO:netdev:Host 10.1.1.1: Stripping prompt
+INFO:netdev:Stripping command
+DEBUG:netdev:Host 10.1.1.1: Send command output: 'hostname R1'
+INFO:netdev:Host 10.1.1.1: Sending command
+DEBUG:netdev:Host 10.1.1.1: Send command: 'show running-config | section include (username) \n'
+INFO:netdev:Host 10.1.1.1: Reading until prompt or pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' or 'R1.*?(\(.*?\))?[\>|\#]' was found: 'show running-config | section include (username) \r\nusername admin privilege 15 password 0 admin\r\nR1#'
+INFO:netdev:Host 10.1.1.1: Stripping prompt
+INFO:netdev:Stripping command
+DEBUG:netdev:Host 10.1.1.1: Send command output: 'username admin privilege 15 password 0 admin'
+INFO:netdev:Host 10.1.1.1: Entering to configuration mode
+INFO:netdev:Host 10.1.1.1: Checking configuration mode
+INFO:netdev:Host 10.1.1.1: Reading until pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern: R1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' was found: '\r\nR1#'
+INFO:netdev:Host 10.1.1.1: Reading until pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern: R1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' was found: 'conf t\r\nEnter configuration commands, one per line.  End with CNTL/Z.\r\nR1(config)#'
+INFO:netdev:Host 10.1.1.1: Checking configuration mode
+INFO:netdev:Host 10.1.1.1: Reading until pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern: R1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' was found: '\r\nR1(config)#'
+INFO:netdev:Host 10.1.1.1: Sending configuration settings
+DEBUG:netdev:Host 10.1.1.1: Config commands: ['int f0/1', 'no sh', 'int f0/1.1', 'encapsulation dot1Q 3', 'ip address 30.30.30.1 255.255.255.0', 'no sh', 'int f0/1.2', 'ip address 40.40.40.1 255.255.255.0', 'encapsulation dot1Q 4', 'int loop 1', 'ip address 4.4.4.4 255.255.255.0', 'no sh']
+INFO:netdev:Host 10.1.1.1: Reading until pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern: R1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' was found: 'int f0/1\r\nR1(config-if)#'
+INFO:netdev:Host 10.1.1.1: Reading until pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern: R1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' was found: 'no sh\r\nR1(config-if)#'
+INFO:netdev:Host 10.1.1.1: Reading until pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern: R1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' was found: 'int f0/1.1\r\nR1(config-subif)#'
+INFO:netdev:Host 10.1.1.1: Reading until pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern: R1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' was found: 'encapsulation dot1Q 3\r\nR1(config-subif)#'
+INFO:netdev:Host 10.1.1.1: Reading until pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern: R1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' was found: 'ip address 30.30.30.1 255.255.255.0\r\nR1(config-subif)#'
+INFO:netdev:Host 10.1.1.1: Reading until pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern: R1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' was found: 'no sh\r\nR1(config-subif)#'
+INFO:netdev:Host 10.1.1.1: Reading until pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern: R1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' was found: 'int f0/1.2\r\nR1(config-subif)#'
+INFO:netdev:Host 10.1.1.1: Reading until pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern: R1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' was found: 'ip address 40.40.40.1 255.255.255.0\r\nR1(config-subif)#'
+INFO:netdev:Host 10.1.1.1: Reading until pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern: R1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' was found: 'encapsulation dot1Q 4\r\nR1(config-subif)#'
+INFO:netdev:Host 10.1.1.1: Reading until pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern: R1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' was found: 'int loop 1\r\nR1(config-if)#'
+INFO:netdev:Host 10.1.1.1: Reading until pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern: R1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' was found: 'ip address 4.4.4.4 255.255.255.0\r\nR1(config-if)#'
+INFO:netdev:Host 10.1.1.1: Reading until pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern: R1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' was found: 'no sh\r\nR1(config-if)#'
+DEBUG:netdev:Host 10.1.1.1: Config commands output: 'int f0/1\nR1(config-if)#no sh\nR1(config-if)#int f0/1.1\nR1(config-subif)#encapsulation dot1Q 3\nR1(config-subif)#ip address 30.30.30.1 255.255.255.0\nR1(config-subif)#no sh\nR1(config-subif)#int f0/1.2\nR1(config-subif)#ip address 40.40.40.1 255.255.255.0\nR1(config-subif)#encapsulation dot1Q 4\nR1(config-subif)#int loop 1\nR1(config-if)#ip address 4.4.4.4 255.255.255.0\nR1(config-if)#no sh\nR1(config-if)#'
+INFO:netdev:Host 10.1.1.1: Exiting from configuration mode
+INFO:netdev:Host 10.1.1.1: Checking configuration mode
+INFO:netdev:Host 10.1.1.1: Reading until pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern: R1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' was found: '\r\nR1(config-if)#'
+INFO:netdev:Host 10.1.1.1: Reading until pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern: R1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' was found: 'end\r\nR1#'
+INFO:netdev:Host 10.1.1.1: Checking configuration mode
+INFO:netdev:Host 10.1.1.1: Reading until pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern: R1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' was found: '\r\nR1#'
+DEBUG:netdev:Host 10.1.1.1: Config commands output: 'conf t\nEnter configuration commands, one per line.  End with CNTL/Z.\nR1(config)#int f0/1\nR1(config-if)#no sh\nR1(config-if)#int f0/1.1\nR1(config-subif)#encapsulation dot1Q 3\nR1(config-subif)#ip address 30.30.30.1 255.255.255.0\nR1(config-subif)#no sh\nR1(config-subif)#int f0/1.2\nR1(config-subif)#ip address 40.40.40.1 255.255.255.0\nR1(config-subif)#encapsulation dot1Q 4\nR1(config-subif)#int loop 1\nR1(config-if)#ip address 4.4.4.4 255.255.255.0\nR1(config-if)#no sh\nR1(config-if)#end\nR1#'
+INFO:netdev:Host 10.1.1.1: Sending command
+DEBUG:netdev:Host 10.1.1.1: Send command: 'show run\n'
+INFO:netdev:Host 10.1.1.1: Reading until prompt or pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' or 'R1.*?(\(.*?\))?[\>|\#]' was found: 'show run\r\nBuilding configuration...\r\n\r\nCurrent configuration : 1645 bytes\r\n!\r\n! Last configuration change at 12:38:34 UTC Wed Dec 18 2019 by admin\r\nupgrade fpd auto\r\nversion 15.2\r\nservice timestamps debug datetime msec\r\nservice timestamps log datetime msec\r\nno service password-encryption\r\n!\r\nhostname R1\r\n!\r\nboot-start-marker\r\nboot-end-marker\r\n!\r\n!\r\n!\r\nno aaa new-model\r\nno ip icmp rate-limit unreachable\r\n!\r\n!\r\n!\r\n!\r\nip dhcp pool h\r\n!\r\nip dhcp pool ali\r\n network 30.30.30.0 255.255.255.0\r\n default-router 30.30.30.1 \r\n!\r\nip dhcp pool hejab\r\n network 40.40.40.0 255.255.255.0\r\n default-router 40.40.40.1 \r\n!\r\n!\r\n!\r\nno ip domain lookup\r\nip domain name hejab.com\r\nip cef\r\nno ipv6 cef\r\n!\r\nmultilink bundle-name authenticated\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\nusername admin privilege 15 password 0 admin\r\n!\r\nredundancy\r\n!\r\n!\r\nip tcp synwait-time 5\r\nip ssh version 2\r\n! \r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\ninterface Loopback1\r\n ip address 4.4.4.4 255.255.255.0\r\n!\r\ninterface FastEthernet0/0\r\n ip address 10.1.1.1 255.255.255.0\r\n duplex auto\r\n speed auto\r\n!\r\ninterface FastEthernet0/1\r\n no ip address\r\n duplex auto\r\n speed auto\r\n!\r\ninterface FastEthernet0/1.1\r\n encapsulation dot1Q 3\r\n ip address 30.30.30.1 255.255.255.0\r\n ip ospf 1 area 0\r\n!\r\ninterface FastEthernet0/1.2\r\n encapsulation dot1Q 4\r\n ip address 40.40.40.1 255.255.255.0\r\n ip ospf 1 area 0\r\n!\r\nrouter ospf 1\r\n!\r\nip forward-protocol nd\r\nno ip http server\r\nno ip http secure-server\r\n!\r\n!\r\n!\r\nip access-list standard hejab\r\n!\r\nno cdp log mismatch duplex\r\n!\r\n!\r\n!\r\ncontrol-plane\r\n!\r\n!\r\n!\r\nmgcp profile default\r\n!\r\n!\r\n!\r\ngatekeeper\r\n shutdown\r\n!\r\n!\r\nline con 0\r\n exec-timeout 0 0\r\n privilege level 15\r\n logging synchronous\r\n stopbits 1\r\nline aux 0\r\n exec-timeout 0 0\r\n privilege level 15\r\n logging synchronous\r\n stopbits 1\r\nline vty 0 4\r\n login local\r\n transport input ssh\r\n transport output ssh\r\n!\r\n!\r\nend\r\n\r\nR1#'
+INFO:netdev:Host 10.1.1.1: Stripping prompt
+INFO:netdev:Stripping command
+DEBUG:netdev:Host 10.1.1.1: Send command output: 'Building configuration...\n\nCurrent configuration : 1645 bytes\n!\n! Last configuration change at 12:38:34 UTC Wed Dec 18 2019 by admin\nupgrade fpd auto\nversion 15.2\nservice timestamps debug datetime msec\nservice timestamps log datetime msec\nno service password-encryption\n!\nhostname R1\n!\nboot-start-marker\nboot-end-marker\n!\n!\n!\nno aaa new-model\nno ip icmp rate-limit unreachable\n!\n!\n!\n!\nip dhcp pool h\n!\nip dhcp pool ali\n network 30.30.30.0 255.255.255.0\n default-router 30.30.30.1 \n!\nip dhcp pool hejab\n network 40.40.40.0 255.255.255.0\n default-router 40.40.40.1 \n!\n!\n!\nno ip domain lookup\nip domain name hejab.com\nip cef\nno ipv6 cef\n!\nmultilink bundle-name authenticated\n!\n!\n!\n!\n!\n!\n!\n!\n!\nusername admin privilege 15 password 0 admin\n!\nredundancy\n!\n!\nip tcp synwait-time 5\nip ssh version 2\n! \n!\n!\n!\n!\n!\n!\n!\n!\n!\ninterface Loopback1\n ip address 4.4.4.4 255.255.255.0\n!\ninterface FastEthernet0/0\n ip address 10.1.1.1 255.255.255.0\n duplex auto\n speed auto\n!\ninterface FastEthernet0/1\n no ip address\n duplex auto\n speed auto\n!\ninterface FastEthernet0/1.1\n encapsulation dot1Q 3\n ip address 30.30.30.1 255.255.255.0\n ip ospf 1 area 0\n!\ninterface FastEthernet0/1.2\n encapsulation dot1Q 4\n ip address 40.40.40.1 255.255.255.0\n ip ospf 1 area 0\n!\nrouter ospf 1\n!\nip forward-protocol nd\nno ip http server\nno ip http secure-server\n!\n!\n!\nip access-list standard hejab\n!\nno cdp log mismatch duplex\n!\n!\n!\ncontrol-plane\n!\n!\n!\nmgcp profile default\n!\n!\n!\ngatekeeper\n shutdown\n!\n!\nline con 0\n exec-timeout 0 0\n privilege level 15\n logging synchronous\n stopbits 1\nline aux 0\n exec-timeout 0 0\n privilege level 15\n logging synchronous\n stopbits 1\nline vty 0 4\n login local\n transport input ssh\n transport output ssh\n!\n!\nend\n'
+INFO:netdev:Host 10.1.1.1: Disconnecting
+INFO:netdev:Host 10.1.1.1: Cleanup session
+INFO:netdev:Host 10.1.1.1: Exiting from configuration mode
+INFO:netdev:Host 10.1.1.1: Checking configuration mode
+INFO:netdev:Host 10.1.1.1: Reading until pattern
+DEBUG:netdev:Host 10.1.1.1: Reading pattern: R1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 10.1.1.1: Reading pattern 'R1.*?(\(.*?\))?[\>|\#]' was found: '\r\nR1#'
+INFO:netdev:Host 20.20.20.1: Trying to connect to the device
+INFO:netdev:Host 20.20.20.1: Establishing connection to port 22
+INFO:netdev:Host 20.20.20.1: Connection is established
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: \>|\#
+DEBUG:netdev:Host 20.20.20.1: Reading pattern '\>|\#' was found: "\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************\r\nSW1#"
+DEBUG:netdev:Host 20.20.20.1: Establish Connection Output: "\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************\r\nSW1#"
+INFO:netdev:Host 20.20.20.1: Setting base prompt
+INFO:netdev:Host 20.20.20.1: Finding prompt
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: \>|\#
+DEBUG:netdev:Host 20.20.20.1: Reading pattern '\>|\#' was found: '\r\nSW1#'
+DEBUG:netdev:Host 20.20.20.1: Found Prompt: 'SW1#'
+DEBUG:netdev:Host 20.20.20.1: Base Prompt: SW1
+DEBUG:netdev:Host 20.20.20.1: Base Pattern: SW1.*?(\(.*?\))?[\>|\#]
+INFO:netdev:Host 20.20.20.1: Entering to privilege exec
+INFO:netdev:Host 20.20.20.1: Checking privilege exec
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1#'
+INFO:netdev:Host 20.20.20.1: Trying to disable paging
+DEBUG:netdev:Host 20.20.20.1: Disable paging command: 'terminal length 0\n'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'terminal length 0\r\nSW1#'
+DEBUG:netdev:Host 20.20.20.1: Disable paging output: 'terminal length 0\r\nSW1#'
+INFO:netdev:Host 20.20.20.1: Has connected to the device
+INFO:netdev:Host 20.20.20.1: Sending command
+DEBUG:netdev:Host 20.20.20.1: Send command: 'show ip interface b | section exclude (unassigned|down|IP-Address)\n'
+INFO:netdev:Host 20.20.20.1: Reading until prompt or pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' or 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'show ip interface b | section exclude (unassigned|down|IP-Address)\r\nVlan2                  20.20.20.1      YES NVRAM  up                    up      \r\nVlan10                 70.70.70.7      YES NVRAM  up                    up      \r\n\r\nSW1#'
+INFO:netdev:Host 20.20.20.1: Stripping prompt
+INFO:netdev:Stripping command
+DEBUG:netdev:Host 20.20.20.1: Send command output: 'Vlan2                  20.20.20.1      YES NVRAM  up                    up      \nVlan10                 70.70.70.7      YES NVRAM  up                    up      \n'
+INFO:netdev:Host 20.20.20.1: Sending command
+DEBUG:netdev:Host 20.20.20.1: Send command: 'show arp | section exclude (Address|-)\n'
+INFO:netdev:Host 20.20.20.1: Reading until prompt or pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' or 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'show arp | section exclude (Address|-)\r\nInternet  20.20.20.2            242   566e.6556.fc3e  ARPA   Vlan2\r\nInternet  20.20.20.3              3   566e.6556.fc3e  ARPA   Vlan2\r\n\r\nSW1#'
+INFO:netdev:Host 20.20.20.1: Stripping prompt
+INFO:netdev:Stripping command
+DEBUG:netdev:Host 20.20.20.1: Send command output: 'Internet  20.20.20.2            242   566e.6556.fc3e  ARPA   Vlan2\nInternet  20.20.20.3              3   566e.6556.fc3e  ARPA   Vlan2\n'
+INFO:netdev:Host 20.20.20.1: Entering to configuration mode
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'conf t\r\nEnter configuration commands, one per line.  End with CNTL/Z.\r\nSW1(config)#'
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1(config)#'
+INFO:netdev:Host 20.20.20.1: Sending configuration settings
+DEBUG:netdev:Host 20.20.20.1: Config commands: ['vlan 2', 'name Ali_net']
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'vlan 2\r\nSW1(config-vlan)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'name Ali_net\r\nVLAN #2 and #4 have an identical name: Ali_net\r\nSW1(config-vlan)#'
+DEBUG:netdev:Host 20.20.20.1: Config commands output: 'vlan 2\nSW1(config-vlan)#name Ali_net\nVLAN #2 and #4 have an identical name: Ali_net\nSW1(config-vlan)#'
+INFO:netdev:Host 20.20.20.1: Exiting from configuration mode
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1(config-vlan)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'end\r\nSW1#'
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1#'
+DEBUG:netdev:Host 20.20.20.1: Config commands output: 'conf t\nEnter configuration commands, one per line.  End with CNTL/Z.\nSW1(config)#vlan 2\nSW1(config-vlan)#name Ali_net\nVLAN #2 and #4 have an identical name: Ali_net\nSW1(config-vlan)#end\nSW1#'
+INFO:netdev:Host 20.20.20.1: Entering to configuration mode
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'conf t\r\nEnter configuration commands, one per line.  End with CNTL/Z.\r\nSW1(config)#'
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1(config)#'
+INFO:netdev:Host 20.20.20.1: Sending configuration settings
+DEBUG:netdev:Host 20.20.20.1: Config commands: ['vlan 2', 'name hejab_net']
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'vlan 2\r\nSW1(config-vlan)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'name hejab_net\r\nSW1(config-vlan)#'
+DEBUG:netdev:Host 20.20.20.1: Config commands output: 'vlan 2\nSW1(config-vlan)#name hejab_net\nSW1(config-vlan)#'
+INFO:netdev:Host 20.20.20.1: Exiting from configuration mode
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1(config-vlan)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'end\r\nSW1#'
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1#'
+DEBUG:netdev:Host 20.20.20.1: Config commands output: 'conf t\nEnter configuration commands, one per line.  End with CNTL/Z.\nSW1(config)#vlan 2\nSW1(config-vlan)#name hejab_net\nSW1(config-vlan)#end\nSW1#'
+INFO:netdev:Host 20.20.20.1: Entering to configuration mode
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'conf t\r\nEnter configuration commands, one per line.  End with CNTL/Z.\r\nSW1(config)#'
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1(config)#'
+INFO:netdev:Host 20.20.20.1: Sending configuration settings
+DEBUG:netdev:Host 20.20.20.1: Config commands: ['vlan 2', 'name cloud_net']
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'vlan 2\r\nSW1(config-vlan)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'name cloud_net\r\nSW1(config-vlan)#'
+DEBUG:netdev:Host 20.20.20.1: Config commands output: 'vlan 2\nSW1(config-vlan)#name cloud_net\nSW1(config-vlan)#'
+INFO:netdev:Host 20.20.20.1: Exiting from configuration mode
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1(config-vlan)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'end\r\nSW1#'
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1#'
+DEBUG:netdev:Host 20.20.20.1: Config commands output: 'conf t\nEnter configuration commands, one per line.  End with CNTL/Z.\nSW1(config)#vlan 2\nSW1(config-vlan)#name cloud_net\nSW1(config-vlan)#end\nSW1#'
+INFO:netdev:Host 20.20.20.1: Entering to configuration mode
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'conf t\r\nEnter configuration commands, one per line.  End with CNTL/Z.\r\nSW1(config)#'
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1(config)#'
+INFO:netdev:Host 20.20.20.1: Sending configuration settings
+DEBUG:netdev:Host 20.20.20.1: Config commands: ['vlan 2', 'name ahmad_net']
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'vlan 2\r\nSW1(config-vlan)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'name ahmad_net\r\nSW1(config-vlan)#'
+DEBUG:netdev:Host 20.20.20.1: Config commands output: 'vlan 2\nSW1(config-vlan)#name ahmad_net\nSW1(config-vlan)#'
+INFO:netdev:Host 20.20.20.1: Exiting from configuration mode
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1(config-vlan)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'end\r\nSW1#'
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1#'
+DEBUG:netdev:Host 20.20.20.1: Config commands output: 'conf t\nEnter configuration commands, one per line.  End with CNTL/Z.\nSW1(config)#vlan 2\nSW1(config-vlan)#name ahmad_net\nSW1(config-vlan)#end\nSW1#'
+INFO:netdev:Host 20.20.20.1: Entering to configuration mode
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'conf t\r\nEnter configuration commands, one per line.  End with CNTL/Z.\r\nSW1(config)#'
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1(config)#'
+INFO:netdev:Host 20.20.20.1: Sending configuration settings
+DEBUG:netdev:Host 20.20.20.1: Config commands: ['vlan 3', 'name Ali_net']
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'vlan 3\r\nSW1(config-vlan)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'name Ali_net\r\nVLAN #3 and #4 have an identical name: Ali_net\r\nSW1(config-vlan)#'
+DEBUG:netdev:Host 20.20.20.1: Config commands output: 'vlan 3\nSW1(config-vlan)#name Ali_net\nVLAN #3 and #4 have an identical name: Ali_net\nSW1(config-vlan)#'
+INFO:netdev:Host 20.20.20.1: Exiting from configuration mode
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1(config-vlan)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'end\r\nSW1#'
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1#'
+DEBUG:netdev:Host 20.20.20.1: Config commands output: 'conf t\nEnter configuration commands, one per line.  End with CNTL/Z.\nSW1(config)#vlan 3\nSW1(config-vlan)#name Ali_net\nVLAN #3 and #4 have an identical name: Ali_net\nSW1(config-vlan)#end\nSW1#'
+INFO:netdev:Host 20.20.20.1: Entering to configuration mode
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'conf t\r\nEnter configuration commands, one per line.  End with CNTL/Z.\r\nSW1(config)#'
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1(config)#'
+INFO:netdev:Host 20.20.20.1: Sending configuration settings
+DEBUG:netdev:Host 20.20.20.1: Config commands: ['vlan 3', 'name hejab_net']
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'vlan 3\r\nSW1(config-vlan)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'name hejab_net\r\nSW1(config-vlan)#'
+DEBUG:netdev:Host 20.20.20.1: Config commands output: 'vlan 3\nSW1(config-vlan)#name hejab_net\nSW1(config-vlan)#'
+INFO:netdev:Host 20.20.20.1: Exiting from configuration mode
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1(config-vlan)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'end\r\nSW1#'
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1#'
+DEBUG:netdev:Host 20.20.20.1: Config commands output: 'conf t\nEnter configuration commands, one per line.  End with CNTL/Z.\nSW1(config)#vlan 3\nSW1(config-vlan)#name hejab_net\nSW1(config-vlan)#end\nSW1#'
+INFO:netdev:Host 20.20.20.1: Entering to configuration mode
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'conf t\r\nEnter configuration commands, one per line.  End with CNTL/Z.\r\nSW1(config)#'
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1(config)#'
+INFO:netdev:Host 20.20.20.1: Sending configuration settings
+DEBUG:netdev:Host 20.20.20.1: Config commands: ['vlan 3', 'name cloud_net']
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'vlan 3\r\nSW1(config-vlan)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'name cloud_net\r\nSW1(config-vlan)#'
+DEBUG:netdev:Host 20.20.20.1: Config commands output: 'vlan 3\nSW1(config-vlan)#name cloud_net\nSW1(config-vlan)#'
+INFO:netdev:Host 20.20.20.1: Exiting from configuration mode
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1(config-vlan)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'end\r\nSW1#'
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1#'
+DEBUG:netdev:Host 20.20.20.1: Config commands output: 'conf t\nEnter configuration commands, one per line.  End with CNTL/Z.\nSW1(config)#vlan 3\nSW1(config-vlan)#name cloud_net\nSW1(config-vlan)#end\nSW1#'
+INFO:netdev:Host 20.20.20.1: Entering to configuration mode
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'conf t\r\nEnter configuration commands, one per line.  End with CNTL/Z.\r\nSW1(config)#'
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1(config)#'
+INFO:netdev:Host 20.20.20.1: Sending configuration settings
+DEBUG:netdev:Host 20.20.20.1: Config commands: ['vlan 3', 'name ahmad_net']
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'vlan 3\r\nSW1(config-vlan)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'name ahmad_net\r\nVLAN #3 and #2 have an identical name: ahmad_net\r\nSW1(config-vlan)#'
+DEBUG:netdev:Host 20.20.20.1: Config commands output: 'vlan 3\nSW1(config-vlan)#name ahmad_net\nVLAN #3 and #2 have an identical name: ahmad_net\nSW1(config-vlan)#'
+INFO:netdev:Host 20.20.20.1: Exiting from configuration mode
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1(config-vlan)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'end\r\nSW1#'
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1#'
+DEBUG:netdev:Host 20.20.20.1: Config commands output: 'conf t\nEnter configuration commands, one per line.  End with CNTL/Z.\nSW1(config)#vlan 3\nSW1(config-vlan)#name ahmad_net\nVLAN #3 and #2 have an identical name: ahmad_net\nSW1(config-vlan)#end\nSW1#'
+INFO:netdev:Host 20.20.20.1: Entering to configuration mode
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'conf t\r\nEnter configuration commands, one per line.  End with CNTL/Z.\r\nSW1(config)#'
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1(config)#'
+INFO:netdev:Host 20.20.20.1: Sending configuration settings
+DEBUG:netdev:Host 20.20.20.1: Config commands: ['vlan 4', 'name Ali_net']
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'vlan 4\r\nSW1(config-vlan)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'name Ali_net\r\nSW1(config-vlan)#'
+DEBUG:netdev:Host 20.20.20.1: Config commands output: 'vlan 4\nSW1(config-vlan)#name Ali_net\nSW1(config-vlan)#'
+INFO:netdev:Host 20.20.20.1: Exiting from configuration mode
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1(config-vlan)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'end\r\nSW1#'
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1#'
+DEBUG:netdev:Host 20.20.20.1: Config commands output: 'conf t\nEnter configuration commands, one per line.  End with CNTL/Z.\nSW1(config)#vlan 4\nSW1(config-vlan)#name Ali_net\nSW1(config-vlan)#end\nSW1#'
+INFO:netdev:Host 20.20.20.1: Entering to configuration mode
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'conf t\r\nEnter configuration commands, one per line.  End with CNTL/Z.\r\nSW1(config)#'
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1(config)#'
+INFO:netdev:Host 20.20.20.1: Sending configuration settings
+DEBUG:netdev:Host 20.20.20.1: Config commands: ['vlan 4', 'name hejab_net']
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'vlan 4\r\nSW1(config-vlan)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'name hejab_net\r\nSW1(config-vlan)#'
+DEBUG:netdev:Host 20.20.20.1: Config commands output: 'vlan 4\nSW1(config-vlan)#name hejab_net\nSW1(config-vlan)#'
+INFO:netdev:Host 20.20.20.1: Exiting from configuration mode
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1(config-vlan)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'end\r\nSW1#'
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1#'
+DEBUG:netdev:Host 20.20.20.1: Config commands output: 'conf t\nEnter configuration commands, one per line.  End with CNTL/Z.\nSW1(config)#vlan 4\nSW1(config-vlan)#name hejab_net\nSW1(config-vlan)#end\nSW1#'
+INFO:netdev:Host 20.20.20.1: Entering to configuration mode
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'conf t\r\nEnter configuration commands, one per line.  End with CNTL/Z.\r\nSW1(config)#'
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1(config)#'
+INFO:netdev:Host 20.20.20.1: Sending configuration settings
+DEBUG:netdev:Host 20.20.20.1: Config commands: ['vlan 4', 'name cloud_net']
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'vlan 4\r\nSW1(config-vlan)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'name cloud_net\r\nVLAN #4 and #3 have an identical name: cloud_net\r\nSW1(config-vlan)#'
+DEBUG:netdev:Host 20.20.20.1: Config commands output: 'vlan 4\nSW1(config-vlan)#name cloud_net\nVLAN #4 and #3 have an identical name: cloud_net\nSW1(config-vlan)#'
+INFO:netdev:Host 20.20.20.1: Exiting from configuration mode
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1(config-vlan)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'end\r\nSW1#'
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1#'
+DEBUG:netdev:Host 20.20.20.1: Config commands output: 'conf t\nEnter configuration commands, one per line.  End with CNTL/Z.\nSW1(config)#vlan 4\nSW1(config-vlan)#name cloud_net\nVLAN #4 and #3 have an identical name: cloud_net\nSW1(config-vlan)#end\nSW1#'
+INFO:netdev:Host 20.20.20.1: Entering to configuration mode
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'conf t\r\nEnter configuration commands, one per line.  End with CNTL/Z.\r\nSW1(config)#'
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1(config)#'
+INFO:netdev:Host 20.20.20.1: Sending configuration settings
+DEBUG:netdev:Host 20.20.20.1: Config commands: ['vlan 4', 'name ahmad_net']
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'vlan 4\r\nSW1(config-vlan)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'name ahmad_net\r\nVLAN #4 and #2 have an identical name: ahmad_net\r\nSW1(config-vlan)#'
+DEBUG:netdev:Host 20.20.20.1: Config commands output: 'vlan 4\nSW1(config-vlan)#name ahmad_net\nVLAN #4 and #2 have an identical name: ahmad_net\nSW1(config-vlan)#'
+INFO:netdev:Host 20.20.20.1: Exiting from configuration mode
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1(config-vlan)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'end\r\nSW1#'
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1#'
+DEBUG:netdev:Host 20.20.20.1: Config commands output: 'conf t\nEnter configuration commands, one per line.  End with CNTL/Z.\nSW1(config)#vlan 4\nSW1(config-vlan)#name ahmad_net\nVLAN #4 and #2 have an identical name: ahmad_net\nSW1(config-vlan)#end\nSW1#'
+INFO:netdev:Host 20.20.20.1: Sending command
+DEBUG:netdev:Host 20.20.20.1: Send command: 'show run | inc hostname\n'
+INFO:netdev:Host 20.20.20.1: Reading until prompt or pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' or 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'show run | inc hostname\r\nhostname SW1\r\nSW1#'
+INFO:netdev:Host 20.20.20.1: Stripping prompt
+INFO:netdev:Stripping command
+DEBUG:netdev:Host 20.20.20.1: Send command output: 'hostname SW1'
+INFO:netdev:Host 20.20.20.1: Sending command
+DEBUG:netdev:Host 20.20.20.1: Send command: 'show running-config | section include (username) \n'
+INFO:netdev:Host 20.20.20.1: Reading until prompt or pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' or 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'show running-config | section include (username) \r\nusername admin privilege 15 password 0 admin\r\nSW1#'
+INFO:netdev:Host 20.20.20.1: Stripping prompt
+INFO:netdev:Stripping command
+DEBUG:netdev:Host 20.20.20.1: Send command output: 'username admin privilege 15 password 0 admin'
+INFO:netdev:Host 20.20.20.1: Entering to configuration mode
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'conf t\r\nEnter configuration commands, one per line.  End with CNTL/Z.\r\nSW1(config)#'
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1(config)#'
+INFO:netdev:Host 20.20.20.1: Sending configuration settings
+DEBUG:netdev:Host 20.20.20.1: Config commands: ['int g0/0', 'switchport mode trunk ', 'switchport trunk encapsulation dot1q', 'vlan 3', 'name hejab_NET1', 'vlan 4', 'name Ali_net', 'int range g0/2 - 3', 'switchport access vlan 3 ', 'int g1/0', 'switchport access vlan 3', 'int range g1/1-3', 'switchport access vlan 4', 'int g2/0', 'switchport trunk encapsulation dot1qswitchport mode trankvtp doamin hejab.com']
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'int g0/0\r\nSW1(config-if)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'switchport mode trunk \r\nSW1(config-if)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'switchport trunk encapsulation dot1q\r\nSW1(config-if)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'vlan 3\r\nSW1(config-vlan)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'name hejab_NET1\r\nSW1(config-vlan)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'vlan 4\r\nSW1(config-vlan)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'name Ali_net\r\nSW1(config-vlan)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'int range g0/2 - 3\r\nSW1(config-if-range)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'switchport access vlan 3 \r\nSW1(config-if-range)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'int g1/0\r\nSW1(config-if)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'switchport access vlan 3\r\nSW1(config-if)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'int range g1/1-3\r\nSW1(config-if-range)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'switchport access vlan 4\r\nSW1(config-if-range)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'int g2/0\r\nSW1(config-if)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: "switchport trunk encapsulation dot1qswitchport mode trankvtp doamin hejab.com\r\n                                                   ^\r\n% Invalid input detected at '^' marker.\r\n\r\nSW1(config-if)#"
+DEBUG:netdev:Host 20.20.20.1: Config commands output: "int g0/0\nSW1(config-if)#switchport mode trunk \nSW1(config-if)#switchport trunk encapsulation dot1q\nSW1(config-if)#vlan 3\nSW1(config-vlan)#name hejab_NET1\nSW1(config-vlan)#vlan 4\nSW1(config-vlan)#name Ali_net\nSW1(config-vlan)#int range g0/2 - 3\nSW1(config-if-range)#switchport access vlan 3 \nSW1(config-if-range)#int g1/0\nSW1(config-if)#switchport access vlan 3\nSW1(config-if)#int range g1/1-3\nSW1(config-if-range)#switchport access vlan 4\nSW1(config-if-range)#int g2/0\nSW1(config-if)#switchport trunk encapsulation dot1qswitchport mode trankvtp doamin hejab.com\n                                                   ^\n% Invalid input detected at '^' marker.\n\nSW1(config-if)#"
+INFO:netdev:Host 20.20.20.1: Exiting from configuration mode
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1(config-if)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'end\r\nSW1#'
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1#'
+DEBUG:netdev:Host 20.20.20.1: Config commands output: "conf t\nEnter configuration commands, one per line.  End with CNTL/Z.\nSW1(config)#int g0/0\nSW1(config-if)#switchport mode trunk \nSW1(config-if)#switchport trunk encapsulation dot1q\nSW1(config-if)#vlan 3\nSW1(config-vlan)#name hejab_NET1\nSW1(config-vlan)#vlan 4\nSW1(config-vlan)#name Ali_net\nSW1(config-vlan)#int range g0/2 - 3\nSW1(config-if-range)#switchport access vlan 3 \nSW1(config-if-range)#int g1/0\nSW1(config-if)#switchport access vlan 3\nSW1(config-if)#int range g1/1-3\nSW1(config-if-range)#switchport access vlan 4\nSW1(config-if-range)#int g2/0\nSW1(config-if)#switchport trunk encapsulation dot1qswitchport mode trankvtp doamin hejab.com\n                                                   ^\n% Invalid input detected at '^' marker.\n\nSW1(config-if)#end\nSW1#"
+INFO:netdev:Host 20.20.20.1: Entering to configuration mode
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'conf t\r\nEnter configuration commands, one per line.  End with CNTL/Z.\r\nSW1(config)#'
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1(config)#'
+INFO:netdev:Host 20.20.20.1: Sending configuration settings
+DEBUG:netdev:Host 20.20.20.1: Config commands: ['int g0/0', 'switchport trunk encapsulation dot1q', 'switchport mode trunk', 'vtp domain hejab.comint range g0/1-3', 'switchport access vlan 3', 'int range g1/0-3', 'switchport access vlan 3']
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'int g0/0\r\nSW1(config-if)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'switchport trunk encapsulation dot1q\r\nSW1(config-if)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'switchport mode trunk\r\nSW1(config-if)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: "vtp domain hejab.comint range g0/1-3\r\n                   ^\r\n% Invalid input detected at '^' marker.\r\n\r\nSW1(config-if)#"
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'switchport access vlan 3\r\nSW1(config-if)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'int range g1/0-3\r\nSW1(config-if-range)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'switchport access vlan 3\r\nSW1(config-if-range)#'
+DEBUG:netdev:Host 20.20.20.1: Config commands output: "int g0/0\nSW1(config-if)#switchport trunk encapsulation dot1q\nSW1(config-if)#switchport mode trunk\nSW1(config-if)#vtp domain hejab.comint range g0/1-3\n                   ^\n% Invalid input detected at '^' marker.\n\nSW1(config-if)#switchport access vlan 3\nSW1(config-if)#int range g1/0-3\nSW1(config-if-range)#switchport access vlan 3\nSW1(config-if-range)#"
+INFO:netdev:Host 20.20.20.1: Exiting from configuration mode
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1(config-if-range)#'
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: 'end\r\nSW1#'
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1#'
+DEBUG:netdev:Host 20.20.20.1: Config commands output: "conf t\nEnter configuration commands, one per line.  End with CNTL/Z.\nSW1(config)#int g0/0\nSW1(config-if)#switchport trunk encapsulation dot1q\nSW1(config-if)#switchport mode trunk\nSW1(config-if)#vtp domain hejab.comint range g0/1-3\n                   ^\n% Invalid input detected at '^' marker.\n\nSW1(config-if)#switchport access vlan 3\nSW1(config-if)#int range g1/0-3\nSW1(config-if-range)#switchport access vlan 3\nSW1(config-if-range)#end\nSW1#"
+INFO:netdev:Host 20.20.20.1: Sending command
+DEBUG:netdev:Host 20.20.20.1: Send command: 'show run\n'
+INFO:netdev:Host 20.20.20.1: Reading until prompt or pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' or 'SW1.*?(\(.*?\))?[\>|\#]' was found: "show run\r\nBuilding configuration...\r\n\r\n  \r\nCurrent configuration : 4501 bytes\r\n!\r\n! Last configuration change at 12:36:13 UTC Wed Dec 18 2019 by admin\r\n!\r\nversion 15.2\r\nservice timestamps debug datetime msec\r\nservice timestamps log datetime msec\r\nno service password-encryption\r\nservice compress-config\r\n!\r\nhostname SW1\r\n!\r\nboot-start-marker\r\nboot-end-marker\r\n!\r\n!\r\nenable password admin\r\n!\r\nusername admin privilege 15 password 0 admin\r\nno aaa new-model\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\nip domain-name hejab.com\r\nip cef\r\nno ipv6 cef\r\n!\r\n!\r\n!\r\nspanning-tree mode rapid-pvst\r\nspanning-tree extend system-id\r\n!\r\n!\r\nvlan access-map 1 10\r\n match ip address vlan\r\n action drop\r\nvlan access-map 10 10\r\n match ip address vlan\r\n action drop\r\n!\r\nvlan internal allocation policy ascending\r\n!\r\n! \r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\ninterface GigabitEthernet0/0\r\n switchport access vlan 3\r\n switchport trunk encapsulation dot1q\r\n switchport mode trunk\r\n media-type rj45\r\n negotiation auto\r\n!\r\ninterface GigabitEthernet0/1\r\n switchport access vlan 2\r\n switchport mode access\r\n media-type rj45\r\n negotiation auto\r\n!\r\ninterface GigabitEthernet0/2\r\n switchport access vlan 3\r\n switchport protected\r\n media-type rj45\r\n negotiation auto\r\n!\r\ninterface GigabitEthernet0/3\r\n switchport access vlan 3\r\n switchport protected\r\n media-type rj45\r\n negotiation auto\r\n!\r\ninterface GigabitEthernet1/0\r\n switchport access vlan 3\r\n media-type rj45\r\n negotiation auto\r\n!\r\ninterface GigabitEthernet1/1\r\n switchport access vlan 3\r\n media-type rj45\r\n negotiation auto\r\n!\r\ninterface GigabitEthernet1/2\r\n switchport access vlan 3\r\n media-type rj45\r\n negotiation auto\r\n!\r\ninterface GigabitEthernet1/3\r\n switchport access vlan 3\r\n media-type rj45\r\n negotiation auto\r\n!\r\ninterface GigabitEthernet2/0\r\n switchport trunk native vlan 50\r\n media-type rj45\r\n negotiation auto\r\n!\r\ninterface GigabitEthernet2/1\r\n media-type rj45\r\n negotiation auto\r\n!\r\ninterface GigabitEthernet2/2\r\n media-type rj45\r\n negotiation auto\r\n!\r\ninterface GigabitEthernet2/3\r\n media-type rj45\r\n negotiation auto\r\n!\r\ninterface GigabitEthernet3/0\r\n media-type rj45\r\n negotiation auto\r\n!\r\ninterface GigabitEthernet3/1\r\n media-type rj45\r\n negotiation auto\r\n!\r\ninterface GigabitEthernet3/2\r\n media-type rj45\r\n negotiation auto\r\n!\r\ninterface GigabitEthernet3/3\r\n media-type rj45\r\n negotiation auto\r\n!\r\ninterface Vlan2\r\n ip address 20.20.20.1 255.255.255.0\r\n!\r\ninterface Vlan7\r\n no ip address\r\n shutdown\r\n!\r\ninterface Vlan10\r\n ip address 70.70.70.7 255.255.255.0\r\n!\r\nip forward-protocol nd\r\n!\r\nno ip http server\r\nno ip http secure-server\r\n!\r\nip ssh version 2\r\n!\r\nip access-list extended vlan\r\n permit ip host 30.30.30.0 40.40.40.0 0.0.0.255\r\n!\r\naccess-list 1 permit any\r\n!\r\n!\r\n!\r\ncontrol-plane\r\n!\r\nbanner exec ^C\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************^C\r\nbanner incoming ^C\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************^C\r\nbanner login ^C\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************^C\r\n!\r\nline con 0\r\n login local\r\n transport output telnet ssh\r\nline aux 0\r\nline vty 0 4\r\n login local\r\n transport input telnet ssh\r\n transport output telnet ssh\r\nline vty 5 55\r\n login\r\n!\r\n!\r\nend\r\n\r\nSW1#"
+INFO:netdev:Host 20.20.20.1: Stripping prompt
+INFO:netdev:Stripping command
+DEBUG:netdev:Host 20.20.20.1: Send command output: "Building configuration...\n\n  \nCurrent configuration : 4501 bytes\n!\n! Last configuration change at 12:36:13 UTC Wed Dec 18 2019 by admin\n!\nversion 15.2\nservice timestamps debug datetime msec\nservice timestamps log datetime msec\nno service password-encryption\nservice compress-config\n!\nhostname SW1\n!\nboot-start-marker\nboot-end-marker\n!\n!\nenable password admin\n!\nusername admin privilege 15 password 0 admin\nno aaa new-model\n!\n!\n!\n!\n!\n!\n!\n!\nip domain-name hejab.com\nip cef\nno ipv6 cef\n!\n!\n!\nspanning-tree mode rapid-pvst\nspanning-tree extend system-id\n!\n!\nvlan access-map 1 10\n match ip address vlan\n action drop\nvlan access-map 10 10\n match ip address vlan\n action drop\n!\nvlan internal allocation policy ascending\n!\n! \n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\ninterface GigabitEthernet0/0\n switchport access vlan 3\n switchport trunk encapsulation dot1q\n switchport mode trunk\n media-type rj45\n negotiation auto\n!\ninterface GigabitEthernet0/1\n switchport access vlan 2\n switchport mode access\n media-type rj45\n negotiation auto\n!\ninterface GigabitEthernet0/2\n switchport access vlan 3\n switchport protected\n media-type rj45\n negotiation auto\n!\ninterface GigabitEthernet0/3\n switchport access vlan 3\n switchport protected\n media-type rj45\n negotiation auto\n!\ninterface GigabitEthernet1/0\n switchport access vlan 3\n media-type rj45\n negotiation auto\n!\ninterface GigabitEthernet1/1\n switchport access vlan 3\n media-type rj45\n negotiation auto\n!\ninterface GigabitEthernet1/2\n switchport access vlan 3\n media-type rj45\n negotiation auto\n!\ninterface GigabitEthernet1/3\n switchport access vlan 3\n media-type rj45\n negotiation auto\n!\ninterface GigabitEthernet2/0\n switchport trunk native vlan 50\n media-type rj45\n negotiation auto\n!\ninterface GigabitEthernet2/1\n media-type rj45\n negotiation auto\n!\ninterface GigabitEthernet2/2\n media-type rj45\n negotiation auto\n!\ninterface GigabitEthernet2/3\n media-type rj45\n negotiation auto\n!\ninterface GigabitEthernet3/0\n media-type rj45\n negotiation auto\n!\ninterface GigabitEthernet3/1\n media-type rj45\n negotiation auto\n!\ninterface GigabitEthernet3/2\n media-type rj45\n negotiation auto\n!\ninterface GigabitEthernet3/3\n media-type rj45\n negotiation auto\n!\ninterface Vlan2\n ip address 20.20.20.1 255.255.255.0\n!\ninterface Vlan7\n no ip address\n shutdown\n!\ninterface Vlan10\n ip address 70.70.70.7 255.255.255.0\n!\nip forward-protocol nd\n!\nno ip http server\nno ip http secure-server\n!\nip ssh version 2\n!\nip access-list extended vlan\n permit ip host 30.30.30.0 40.40.40.0 0.0.0.255\n!\naccess-list 1 permit any\n!\n!\n!\ncontrol-plane\n!\nbanner exec ^C\n**************************************************************************\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\n* education. IOSv is provided as-is and is not supported by Cisco's      *\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\n* of the IOSv Software or Documentation to any third party for any       *\n* purposes is expressly prohibited except as otherwise authorized by     *\n* Cisco in writing.                                                      *\n**************************************************************************^C\nbanner incoming ^C\n**************************************************************************\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\n* education. IOSv is provided as-is and is not supported by Cisco's      *\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\n* of the IOSv Software or Documentation to any third party for any       *\n* purposes is expressly prohibited except as otherwise authorized by     *\n* Cisco in writing.                                                      *\n**************************************************************************^C\nbanner login ^C\n**************************************************************************\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\n* education. IOSv is provided as-is and is not supported by Cisco's      *\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\n* of the IOSv Software or Documentation to any third party for any       *\n* purposes is expressly prohibited except as otherwise authorized by     *\n* Cisco in writing.                                                      *\n**************************************************************************^C\n!\nline con 0\n login local\n transport output telnet ssh\nline aux 0\nline vty 0 4\n login local\n transport input telnet ssh\n transport output telnet ssh\nline vty 5 55\n login\n!\n!\nend\n"
+INFO:netdev:Host 20.20.20.1: Disconnecting
+INFO:netdev:Host 20.20.20.1: Cleanup session
+INFO:netdev:Host 20.20.20.1: Exiting from configuration mode
+INFO:netdev:Host 20.20.20.1: Checking configuration mode
+INFO:netdev:Host 20.20.20.1: Reading until pattern
+DEBUG:netdev:Host 20.20.20.1: Reading pattern: SW1.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.1: Reading pattern 'SW1.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW1#'
+INFO:netdev:Host 20.20.20.5: Trying to connect to the device
+INFO:netdev:Host 20.20.20.5: Establishing connection to port 22
+INFO:netdev:Host 20.20.20.5: Connection is established
+INFO:netdev:Host 20.20.20.5: Reading until pattern
+DEBUG:netdev:Host 20.20.20.5: Reading pattern: \>|\#
+DEBUG:netdev:Host 20.20.20.5: Reading pattern '\>|\#' was found: "\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************\r\nSW2#"
+DEBUG:netdev:Host 20.20.20.5: Establish Connection Output: "\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************\r\nSW2#"
+INFO:netdev:Host 20.20.20.5: Setting base prompt
+INFO:netdev:Host 20.20.20.5: Finding prompt
+INFO:netdev:Host 20.20.20.5: Reading until pattern
+DEBUG:netdev:Host 20.20.20.5: Reading pattern: \>|\#
+DEBUG:netdev:Host 20.20.20.5: Reading pattern '\>|\#' was found: '\r\nSW2#'
+DEBUG:netdev:Host 20.20.20.5: Found Prompt: 'SW2#'
+DEBUG:netdev:Host 20.20.20.5: Base Prompt: SW2
+DEBUG:netdev:Host 20.20.20.5: Base Pattern: SW2.*?(\(.*?\))?[\>|\#]
+INFO:netdev:Host 20.20.20.5: Entering to privilege exec
+INFO:netdev:Host 20.20.20.5: Checking privilege exec
+INFO:netdev:Host 20.20.20.5: Reading until pattern
+DEBUG:netdev:Host 20.20.20.5: Reading pattern: SW2.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.5: Reading pattern 'SW2.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW2#'
+INFO:netdev:Host 20.20.20.5: Trying to disable paging
+DEBUG:netdev:Host 20.20.20.5: Disable paging command: 'terminal length 0\n'
+INFO:netdev:Host 20.20.20.5: Reading until pattern
+DEBUG:netdev:Host 20.20.20.5: Reading pattern: SW2.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.5: Reading pattern 'SW2.*?(\(.*?\))?[\>|\#]' was found: 'terminal length 0\r\nSW2#'
+DEBUG:netdev:Host 20.20.20.5: Disable paging output: 'terminal length 0\r\nSW2#'
+INFO:netdev:Host 20.20.20.5: Has connected to the device
+INFO:netdev:Host 20.20.20.5: Sending command
+DEBUG:netdev:Host 20.20.20.5: Send command: 'show ip interface b | section exclude (unassigned|down|IP-Address)\n'
+INFO:netdev:Host 20.20.20.5: Reading until prompt or pattern
+DEBUG:netdev:Host 20.20.20.5: Reading pattern 'SW2.*?(\(.*?\))?[\>|\#]' or 'SW2.*?(\(.*?\))?[\>|\#]' was found: 'show ip interface b | section exclude (unassigned|down|IP-Address)\r\nVlan2                  20.20.20.5      YES manual up                    up      \r\n\r\nSW2#'
+INFO:netdev:Host 20.20.20.5: Stripping prompt
+INFO:netdev:Stripping command
+DEBUG:netdev:Host 20.20.20.5: Send command output: 'Vlan2                  20.20.20.5      YES manual up                    up      \n'
+INFO:netdev:Host 20.20.20.5: Sending command
+DEBUG:netdev:Host 20.20.20.5: Send command: 'show arp | section exclude (Address|-)\n'
+INFO:netdev:Host 20.20.20.5: Reading until prompt or pattern
+DEBUG:netdev:Host 20.20.20.5: Reading pattern 'SW2.*?(\(.*?\))?[\>|\#]' or 'SW2.*?(\(.*?\))?[\>|\#]' was found: 'show arp | section exclude (Address|-)\r\nInternet  20.20.20.2            121   566e.6556.fc3e  ARPA   Vlan2\r\n\r\nSW2#'
+INFO:netdev:Host 20.20.20.5: Stripping prompt
+INFO:netdev:Stripping command
+DEBUG:netdev:Host 20.20.20.5: Send command output: 'Internet  20.20.20.2            121   566e.6556.fc3e  ARPA   Vlan2\n'
+INFO:netdev:Host 20.20.20.5: Sending command
+DEBUG:netdev:Host 20.20.20.5: Send command: 'show run | inc hostname\n'
+INFO:netdev:Host 20.20.20.5: Reading until prompt or pattern
+DEBUG:netdev:Host 20.20.20.5: Reading pattern 'SW2.*?(\(.*?\))?[\>|\#]' or 'SW2.*?(\(.*?\))?[\>|\#]' was found: 'show run | inc hostname\r\nhostname SW2\r\nSW2#'
+INFO:netdev:Host 20.20.20.5: Stripping prompt
+INFO:netdev:Stripping command
+DEBUG:netdev:Host 20.20.20.5: Send command output: 'hostname SW2'
+INFO:netdev:Host 20.20.20.5: Sending command
+DEBUG:netdev:Host 20.20.20.5: Send command: 'show running-config | section include (username) \n'
+INFO:netdev:Host 20.20.20.5: Reading until prompt or pattern
+DEBUG:netdev:Host 20.20.20.5: Reading pattern 'SW2.*?(\(.*?\))?[\>|\#]' or 'SW2.*?(\(.*?\))?[\>|\#]' was found: 'show running-config | section include (username) \r\nusername admin privilege 15 password 0 admin\r\nSW2#'
+INFO:netdev:Host 20.20.20.5: Stripping prompt
+INFO:netdev:Stripping command
+DEBUG:netdev:Host 20.20.20.5: Send command output: 'username admin privilege 15 password 0 admin'
+INFO:netdev:Host 20.20.20.5: Entering to configuration mode
+INFO:netdev:Host 20.20.20.5: Checking configuration mode
+INFO:netdev:Host 20.20.20.5: Reading until pattern
+DEBUG:netdev:Host 20.20.20.5: Reading pattern: SW2.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.5: Reading pattern 'SW2.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW2#'
+INFO:netdev:Host 20.20.20.5: Reading until pattern
+DEBUG:netdev:Host 20.20.20.5: Reading pattern: SW2.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.5: Reading pattern 'SW2.*?(\(.*?\))?[\>|\#]' was found: 'conf t\r\nEnter configuration commands, one per line.  End with CNTL/Z.\r\nSW2(config)#'
+INFO:netdev:Host 20.20.20.5: Checking configuration mode
+INFO:netdev:Host 20.20.20.5: Reading until pattern
+DEBUG:netdev:Host 20.20.20.5: Reading pattern: SW2.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.5: Reading pattern 'SW2.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW2(config)#'
+INFO:netdev:Host 20.20.20.5: Sending configuration settings
+DEBUG:netdev:Host 20.20.20.5: Config commands: ['int g0/0', 'switchport trunk encapsulation dot1q', 'switchport mode trunk', 'vtp domain hejab.comint range g0/1-3', 'switchport access vlan 3', 'int range g1/0-3', 'switchport access vlan 3']
+INFO:netdev:Host 20.20.20.5: Reading until pattern
+DEBUG:netdev:Host 20.20.20.5: Reading pattern: SW2.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.5: Reading pattern 'SW2.*?(\(.*?\))?[\>|\#]' was found: 'int g0/0\r\nSW2(config-if)#'
+INFO:netdev:Host 20.20.20.5: Reading until pattern
+DEBUG:netdev:Host 20.20.20.5: Reading pattern: SW2.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.5: Reading pattern 'SW2.*?(\(.*?\))?[\>|\#]' was found: 'switchport trunk encapsulation dot1q\r\nSW2(config-if)#'
+INFO:netdev:Host 20.20.20.5: Reading until pattern
+DEBUG:netdev:Host 20.20.20.5: Reading pattern: SW2.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.5: Reading pattern 'SW2.*?(\(.*?\))?[\>|\#]' was found: 'switchport mode trunk\r\nSW2(config-if)#'
+INFO:netdev:Host 20.20.20.5: Reading until pattern
+DEBUG:netdev:Host 20.20.20.5: Reading pattern: SW2.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.5: Reading pattern 'SW2.*?(\(.*?\))?[\>|\#]' was found: "vtp domain hejab.comint range g0/1-3\r\n                   ^\r\n% Invalid input detected at '^' marker.\r\n\r\nSW2(config-if)#"
+INFO:netdev:Host 20.20.20.5: Reading until pattern
+DEBUG:netdev:Host 20.20.20.5: Reading pattern: SW2.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.5: Reading pattern 'SW2.*?(\(.*?\))?[\>|\#]' was found: 'switchport access vlan 3\r\nSW2(config-if)#'
+INFO:netdev:Host 20.20.20.5: Reading until pattern
+DEBUG:netdev:Host 20.20.20.5: Reading pattern: SW2.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.5: Reading pattern 'SW2.*?(\(.*?\))?[\>|\#]' was found: 'int range g1/0-3\r\nSW2(config-if-range)#'
+INFO:netdev:Host 20.20.20.5: Reading until pattern
+DEBUG:netdev:Host 20.20.20.5: Reading pattern: SW2.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.5: Reading pattern 'SW2.*?(\(.*?\))?[\>|\#]' was found: 'switchport access vlan 3\r\nSW2(config-if-range)#'
+DEBUG:netdev:Host 20.20.20.5: Config commands output: "int g0/0\nSW2(config-if)#switchport trunk encapsulation dot1q\nSW2(config-if)#switchport mode trunk\nSW2(config-if)#vtp domain hejab.comint range g0/1-3\n                   ^\n% Invalid input detected at '^' marker.\n\nSW2(config-if)#switchport access vlan 3\nSW2(config-if)#int range g1/0-3\nSW2(config-if-range)#switchport access vlan 3\nSW2(config-if-range)#"
+INFO:netdev:Host 20.20.20.5: Exiting from configuration mode
+INFO:netdev:Host 20.20.20.5: Checking configuration mode
+INFO:netdev:Host 20.20.20.5: Reading until pattern
+DEBUG:netdev:Host 20.20.20.5: Reading pattern: SW2.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.5: Reading pattern 'SW2.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW2(config-if-range)#'
+INFO:netdev:Host 20.20.20.5: Reading until pattern
+DEBUG:netdev:Host 20.20.20.5: Reading pattern: SW2.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.5: Reading pattern 'SW2.*?(\(.*?\))?[\>|\#]' was found: 'end\r\nSW2#'
+INFO:netdev:Host 20.20.20.5: Checking configuration mode
+INFO:netdev:Host 20.20.20.5: Reading until pattern
+DEBUG:netdev:Host 20.20.20.5: Reading pattern: SW2.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.5: Reading pattern 'SW2.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW2#'
+DEBUG:netdev:Host 20.20.20.5: Config commands output: "conf t\nEnter configuration commands, one per line.  End with CNTL/Z.\nSW2(config)#int g0/0\nSW2(config-if)#switchport trunk encapsulation dot1q\nSW2(config-if)#switchport mode trunk\nSW2(config-if)#vtp domain hejab.comint range g0/1-3\n                   ^\n% Invalid input detected at '^' marker.\n\nSW2(config-if)#switchport access vlan 3\nSW2(config-if)#int range g1/0-3\nSW2(config-if-range)#switchport access vlan 3\nSW2(config-if-range)#end\nSW2#"
+INFO:netdev:Host 20.20.20.5: Sending command
+DEBUG:netdev:Host 20.20.20.5: Send command: 'show run\n'
+INFO:netdev:Host 20.20.20.5: Reading until prompt or pattern
+DEBUG:netdev:Host 20.20.20.5: Reading pattern 'SW2.*?(\(.*?\))?[\>|\#]' or 'SW2.*?(\(.*?\))?[\>|\#]' was found: "show run\r\nBuilding configuration...\r\n\r\n  \r\nCurrent configuration : 3992 bytes\r\n!\r\n! Last configuration change at 12:38:57 UTC Wed Dec 18 2019 by admin\r\n!\r\nversion 15.2\r\nservice timestamps debug datetime msec\r\nservice timestamps log datetime msec\r\nno service password-encryption\r\nservice compress-config\r\n!\r\nhostname SW2\r\n!\r\nboot-start-marker\r\nboot-end-marker\r\n!\r\n!\r\n!\r\nusername admin privilege 15 password 0 admin\r\nno aaa new-model\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\nip domain-name hejab.com\r\nip cef\r\nno ipv6 cef\r\n!\r\n!\r\n!\r\nspanning-tree mode rapid-pvst\r\nspanning-tree extend system-id\r\n!\r\nvlan internal allocation policy ascending\r\n!\r\n! \r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\ninterface GigabitEthernet0/0\r\n switchport access vlan 3\r\n switchport trunk encapsulation dot1q\r\n switchport trunk native vlan 50\r\n switchport mode trunk\r\n media-type rj45\r\n negotiation auto\r\n!\r\ninterface GigabitEthernet0/1\r\n switchport access vlan 3\r\n media-type rj45\r\n negotiation auto\r\n!\r\ninterface GigabitEthernet0/2\r\n switchport access vlan 3\r\n media-type rj45\r\n negotiation auto\r\n!\r\ninterface GigabitEthernet0/3\r\n switchport access vlan 3\r\n media-type rj45\r\n negotiation auto\r\n!\r\ninterface GigabitEthernet1/0\r\n switchport access vlan 3\r\n media-type rj45\r\n negotiation auto\r\n!\r\ninterface GigabitEthernet1/1\r\n switchport access vlan 3\r\n media-type rj45\r\n negotiation auto\r\n!\r\ninterface GigabitEthernet1/2\r\n switchport access vlan 3\r\n media-type rj45\r\n negotiation auto\r\n!\r\ninterface GigabitEthernet1/3\r\n switchport access vlan 3\r\n media-type rj45\r\n negotiation auto\r\n!\r\ninterface GigabitEthernet2/0\r\n media-type rj45\r\n negotiation auto\r\n!\r\ninterface GigabitEthernet2/1\r\n media-type rj45\r\n negotiation auto\r\n!\r\ninterface GigabitEthernet2/2\r\n media-type rj45\r\n negotiation auto\r\n!\r\ninterface GigabitEthernet2/3\r\n media-type rj45\r\n negotiation auto\r\n!\r\ninterface GigabitEthernet3/0\r\n media-type rj45\r\n negotiation auto\r\n!\r\ninterface GigabitEthernet3/1\r\n media-type rj45\r\n negotiation auto\r\n!\r\ninterface GigabitEthernet3/2\r\n media-type rj45\r\n negotiation auto\r\n!\r\ninterface GigabitEthernet3/3\r\n media-type rj45\r\n negotiation auto\r\n!\r\ninterface Vlan2\r\n ip address 20.20.20.5 255.255.255.0\r\n!\r\nip forward-protocol nd\r\n!\r\nno ip http server\r\nno ip http secure-server\r\n!\r\nip ssh version 2\r\n!\r\n!\r\n!\r\n!\r\n!\r\ncontrol-plane\r\n!\r\nbanner exec ^C\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************^C\r\nbanner incoming ^C\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************^C\r\nbanner login ^C\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************^C\r\n!\r\nline con 0\r\nline aux 0\r\nline vty 0 4\r\n login local\r\n transport input ssh\r\n!\r\n!\r\nend\r\n\r\nSW2#"
+INFO:netdev:Host 20.20.20.5: Stripping prompt
+INFO:netdev:Stripping command
+DEBUG:netdev:Host 20.20.20.5: Send command output: "Building configuration...\n\n  \nCurrent configuration : 3992 bytes\n!\n! Last configuration change at 12:38:57 UTC Wed Dec 18 2019 by admin\n!\nversion 15.2\nservice timestamps debug datetime msec\nservice timestamps log datetime msec\nno service password-encryption\nservice compress-config\n!\nhostname SW2\n!\nboot-start-marker\nboot-end-marker\n!\n!\n!\nusername admin privilege 15 password 0 admin\nno aaa new-model\n!\n!\n!\n!\n!\n!\n!\n!\nip domain-name hejab.com\nip cef\nno ipv6 cef\n!\n!\n!\nspanning-tree mode rapid-pvst\nspanning-tree extend system-id\n!\nvlan internal allocation policy ascending\n!\n! \n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\ninterface GigabitEthernet0/0\n switchport access vlan 3\n switchport trunk encapsulation dot1q\n switchport trunk native vlan 50\n switchport mode trunk\n media-type rj45\n negotiation auto\n!\ninterface GigabitEthernet0/1\n switchport access vlan 3\n media-type rj45\n negotiation auto\n!\ninterface GigabitEthernet0/2\n switchport access vlan 3\n media-type rj45\n negotiation auto\n!\ninterface GigabitEthernet0/3\n switchport access vlan 3\n media-type rj45\n negotiation auto\n!\ninterface GigabitEthernet1/0\n switchport access vlan 3\n media-type rj45\n negotiation auto\n!\ninterface GigabitEthernet1/1\n switchport access vlan 3\n media-type rj45\n negotiation auto\n!\ninterface GigabitEthernet1/2\n switchport access vlan 3\n media-type rj45\n negotiation auto\n!\ninterface GigabitEthernet1/3\n switchport access vlan 3\n media-type rj45\n negotiation auto\n!\ninterface GigabitEthernet2/0\n media-type rj45\n negotiation auto\n!\ninterface GigabitEthernet2/1\n media-type rj45\n negotiation auto\n!\ninterface GigabitEthernet2/2\n media-type rj45\n negotiation auto\n!\ninterface GigabitEthernet2/3\n media-type rj45\n negotiation auto\n!\ninterface GigabitEthernet3/0\n media-type rj45\n negotiation auto\n!\ninterface GigabitEthernet3/1\n media-type rj45\n negotiation auto\n!\ninterface GigabitEthernet3/2\n media-type rj45\n negotiation auto\n!\ninterface GigabitEthernet3/3\n media-type rj45\n negotiation auto\n!\ninterface Vlan2\n ip address 20.20.20.5 255.255.255.0\n!\nip forward-protocol nd\n!\nno ip http server\nno ip http secure-server\n!\nip ssh version 2\n!\n!\n!\n!\n!\ncontrol-plane\n!\nbanner exec ^C\n**************************************************************************\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\n* education. IOSv is provided as-is and is not supported by Cisco's      *\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\n* of the IOSv Software or Documentation to any third party for any       *\n* purposes is expressly prohibited except as otherwise authorized by     *\n* Cisco in writing.                                                      *\n**************************************************************************^C\nbanner incoming ^C\n**************************************************************************\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\n* education. IOSv is provided as-is and is not supported by Cisco's      *\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\n* of the IOSv Software or Documentation to any third party for any       *\n* purposes is expressly prohibited except as otherwise authorized by     *\n* Cisco in writing.                                                      *\n**************************************************************************^C\nbanner login ^C\n**************************************************************************\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\n* education. IOSv is provided as-is and is not supported by Cisco's      *\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\n* of the IOSv Software or Documentation to any third party for any       *\n* purposes is expressly prohibited except as otherwise authorized by     *\n* Cisco in writing.                                                      *\n**************************************************************************^C\n!\nline con 0\nline aux 0\nline vty 0 4\n login local\n transport input ssh\n!\n!\nend\n"
+INFO:netdev:Host 20.20.20.5: Disconnecting
+INFO:netdev:Host 20.20.20.5: Cleanup session
+INFO:netdev:Host 20.20.20.5: Exiting from configuration mode
+INFO:netdev:Host 20.20.20.5: Checking configuration mode
+INFO:netdev:Host 20.20.20.5: Reading until pattern
+DEBUG:netdev:Host 20.20.20.5: Reading pattern: SW2.*?(\(.*?\))?[\>|\#]
+DEBUG:netdev:Host 20.20.20.5: Reading pattern 'SW2.*?(\(.*?\))?[\>|\#]' was found: '\r\nSW2#'
